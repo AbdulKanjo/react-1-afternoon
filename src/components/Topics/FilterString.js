@@ -1,33 +1,39 @@
 import React, { Component } from "react";
-class FilterString extends Component {
+
+export default class FilterString extends Component {
   constructor() {
     super();
+
     this.state = {
       names: [
-        "Yazen",
-        "Zain",
-        "Abdul",
-        "Lukeman",
-        "Mohamed",
-        "Josh",
+        "James",
+        "Jessica",
+        "Melody",
+        "Tyler",
+        "Blake",
+        "Jennifer",
         "Mark",
-        "Basel"
+        "Maddy"
       ],
       userInput: "",
       filteredNames: []
     };
   }
-  handelChange(val) {
+
+  handleChange(val) {
     this.setState({ userInput: val });
   }
+
   filterNames(userInput) {
     var names = this.state.names;
     var filteredNames = [];
-    for (var i = 0; i < filteredNames.length; i++) {
+
+    for (var i = 0; i < names.length; i++) {
       if (names[i].includes(userInput)) {
         filteredNames.push(names[i]);
       }
     }
+
     this.setState({ filteredNames: filteredNames });
   }
 
@@ -62,4 +68,3 @@ class FilterString extends Component {
     );
   }
 }
-export default FilterString;
